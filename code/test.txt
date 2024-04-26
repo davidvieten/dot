@@ -1,0 +1,4 @@
+leftdefense lefthash net
+rightwing dot corner
+center stackinside backdoor
+leftwing stackoutside hold
