@@ -34,7 +34,6 @@ type EndRoute =
     | DownWall of Coordinate
     | UpWall of Coordinate
     | Corner of Coordinate
-    | Hold of Coordinate
     | Slot of Coordinate
     | BackDoor of Coordinate
 
@@ -47,4 +46,4 @@ type Route =
 type Board = Route list
 
 
-let canvasSize = 400
+let boardSize = 400

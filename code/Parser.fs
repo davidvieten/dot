@@ -46,7 +46,7 @@ let player =
 
 let location (dotPlace: DotPlace) =
     match (dotPlace) with
-    | (Left, Offense) -> 
+    | (Right, Offense) -> 
             (pstr "lefthash" |>> (fun _ -> LeftHash { x = 170; y = 250 })) <|>
             (pstr "righthash" |>> (fun _ -> RightHash { x = 50; y = 250 })) <|>
             (pstr "dot" |>> (fun _ -> Dot { x = 107; y = 250 })) <|>
@@ -56,31 +56,27 @@ let location (dotPlace: DotPlace) =
             (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 65; y = 220 }))
                 
     | (Left, Defense) -> 
-            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 0; y = 0 })) <|>
-            (pstr "righthash" |>> (fun _ -> RightHash { x = 0; y = 0 })) <|>
-            (pstr "dot" |>> (fun _ -> Dot { x = 0; y = 0 })) <|>
-            (pstr "rightpoint" |>> (fun _ -> RightPoint { x = 0; y = 0 })) <|>
-            (pstr "leftpoint" |>> (fun _ -> LeftPoint { x = 0; y = 0 })) <|>
-            (pstr "stackinside" |>> (fun _ -> StackInside { x = 0; y = 0 })) <|>
-            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 0; y = 0 }))
+            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 50; y = 282 })) <|>
+            (pstr "righthash" |>> (fun _ -> RightHash { x = 170; y = 282 })) <|>
+            (pstr "dot" |>> (fun _ -> Dot { x = 107; y = 282 })) <|>
+            (pstr "stackinside" |>> (fun _ -> StackInside { x = 150; y = 310 })) <|>
+            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 200; y = 282 }))
                 
-    | (Right, Offense) -> 
-            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 0; y = 0 })) <|>
-            (pstr "righthash" |>> (fun _ -> RightHash { x = 0; y = 0 })) <|>
-            (pstr "dot" |>> (fun _ -> Dot { x = 0; y = 0 })) <|>
-            (pstr "rightpoint" |>> (fun _ -> RightPoint { x = 0; y = 0 })) <|>
-            (pstr "leftpoint" |>> (fun _ -> LeftPoint { x = 0; y = 0 })) <|>
-            (pstr "stackinside" |>> (fun _ -> StackInside { x = 0; y = 0 })) <|>
-            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 0; y = 0 }))
+    | (Left, Offense) -> 
+            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 360; y = 250 })) <|>
+            (pstr "righthash" |>> (fun _ -> RightHash { x = 235; y = 250 })) <|>
+            (pstr "dot" |>> (fun _ -> Dot { x = 296; y = 250 })) <|>
+            (pstr "rightpoint" |>> (fun _ -> RightPoint { x = 235; y = 155 })) <|>
+            (pstr "leftpoint" |>> (fun _ -> LeftPoint { x = 360; y = 155 })) <|>
+            (pstr "stackinside" |>> (fun _ -> StackInside { x = 340; y = 220 })) <|>
+            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 255; y = 220 }))
                 
     | (Right, Defense) -> 
-            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 0; y = 0 })) <|>
-            (pstr "righthash" |>> (fun _ -> RightHash { x = 0; y = 0 })) <|>
-            (pstr "dot" |>> (fun _ -> Dot { x = 0; y = 0 })) <|>
-            (pstr "rightpoint" |>> (fun _ -> RightPoint { x = 0; y = 0 })) <|>
-            (pstr "leftpoint" |>> (fun _ -> LeftPoint { x = 0; y = 0 })) <|>
-            (pstr "stackinside" |>> (fun _ -> StackInside { x = 0; y = 0 })) <|>
-            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 0; y = 0 }))
+            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 360; y = 282 })) <|>
+            (pstr "righthash" |>> (fun _ -> RightHash { x = 235; y = 282 })) <|>
+            (pstr "dot" |>> (fun _ -> Dot { x = 296; y = 282 })) <|>
+            (pstr "stackinside" |>> (fun _ -> StackInside { x = 255; y = 310 })) <|>
+            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 210; y = 282 }))
 
 let side = 
     (pstr "right" |>> (fun _ -> Right)) <|>
@@ -94,7 +90,7 @@ let dotplace =
     pseq
         (pad side)
         (pad zone)
-        (fun sz -> (sz))
+        (fun sz -> (sz))|>>DotPlace
         
 let position (dotPlace: DotPlace) =
     pseq
@@ -109,20 +105,44 @@ let start (dotPlace: DotPlace)=
         (fun (p, d) ->
             (p, d)) |>> Start
 
-//fine, just need to enter coordinates
-let endroute = 
-    (pstr "net" |>> (fun _ -> Net { x = 0; y = 0 })) <|>
-    (pstr "walkline" |>> (fun _ -> WalkLine { x = 0; y = 0 })) <|>
-    (pstr "upwall" |>> (fun _ -> UpWall { x = 0; y = 0 })) <|>
-    (pstr "corner" |>> (fun _ -> Corner { x = 0; y = 0 })) <|>
-    (pstr "hold" |>> (fun _ -> Hold { x = 0; y = 0 })) <|>
-    (pstr "slot" |>> (fun _ -> Slot { x = 0; y = 0 })) <|>
-    (pstr "backdoor" |>> (fun _ -> BackDoor { x = 0; y = 0 }))
+let endroute (dotPlace: DotPlace) =
+    match (dotPlace) with
+    | (Left, Offense) -> 
+            (pstr "net" |>> (fun _ -> Net { x = 200; y = 300 })) <|>
+            (pstr "walkline" |>> (fun _ -> WalkLine { x = 120; y = 170 })) <|>
+            (pstr "upwall" |>> (fun _ -> UpWall { x = 360; y = 200 })) <|>
+            (pstr "corner" |>> (fun _ -> Corner { x = 330; y = 360 })) <|>
+            (pstr "slot" |>> (fun _ -> Slot { x = 200; y = 240 })) <|>
+            (pstr "backdoor" |>> (fun _ -> BackDoor { x = 170; y = 310 }))
+                
+    | (Left, Defense) -> 
+            (pstr "net" |>> (fun _ -> Net { x = 200; y = 300 })) <|>
+            (pstr "walkline" |>> (fun _ -> WalkLine { x = 200; y = 370 })) <|>
+            (pstr "upwall" |>> (fun _ -> UpWall { x = 40; y = 200 })) <|>
+            (pstr "corner" |>> (fun _ -> Corner { x = 70; y = 360 })) <|>
+            (pstr "slot" |>> (fun _ -> Slot { x = 200; y = 240 })) <|>
+            (pstr "backdoor" |>> (fun _ -> BackDoor { x = 170; y = 310 }))
+                
+    | (Right, Offense) -> 
+            (pstr "net" |>> (fun _ -> Net { x = 200; y = 300 })) <|>
+            (pstr "walkline" |>> (fun _ -> WalkLine { x = 280; y = 170 })) <|>
+            (pstr "upwall" |>> (fun _ -> UpWall { x = 40; y = 200 })) <|>
+            (pstr "corner" |>> (fun _ -> Corner { x = 70; y = 360 })) <|>
+            (pstr "slot" |>> (fun _ -> Slot { x = 200; y = 240 })) <|>
+            (pstr "backdoor" |>> (fun _ -> BackDoor { x = 230; y = 310 }))
+                
+    | (Right, Defense) -> 
+            (pstr "net" |>> (fun _ -> Net { x = 200; y = 300 })) <|>
+            (pstr "walkline" |>> (fun _ -> WalkLine { x = 200; y = 370 })) <|>
+            (pstr "upwall" |>> (fun _ -> UpWall { x = 360; y = 200 })) <|>
+            (pstr "corner" |>> (fun _ -> Corner { x = 330; y = 360 })) <|>
+            (pstr "slot" |>> (fun _ -> Slot { x = 200; y = 240 })) <|>
+            (pstr "backdoor" |>> (fun _ -> BackDoor { x = 230; y = 310 }))
 
 let route (dotPlace: DotPlace) =
     pseq
         (pad (start dotPlace))  
-        (pad endroute)
+        (pad (endroute dotPlace))
         (fun (s, e) -> { start = s; endRoute = e }) |>> (fun l -> [l])
 
 exprImpl :=

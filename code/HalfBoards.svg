@@ -1,20 +1,18 @@
 <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
   <image href="Rink.png" height="400" width="400" />
-  
-	<!-- Left Point-->
-	 <circle cx="170" cy="155" r="7" />
-	<!-- Right Point-->
-	 <circle cx="50" cy="155" r="7" />
-	<!-- Right Hash-->
-	 <circle cx="50" cy="250" r="7" />
-	<!-- Left Hash-->
-	 <circle cx="170" cy="250" r="7" />
-	<!-- Dot-->
-	 <circle cx="107" cy="250" r="7" />
-	<!-- Stack Inside-->
-	 <circle cx="150" cy="220" r="7" />
-	<!-- Stack Outside-->
-	 <circle cx="65" cy="220" r="7" />
-	
-
+<circle cx="360" cy="250" r="5" fill="black" />
+<circle cx="330" cy="360" r="5" fill="black" />
+  <line x1="360" y1="250" x2="330" y2="360" style="stroke:black;stroke-width:3" />
+<circle cx="235" cy="250" r="5" fill="black" />
+<circle cx="170" cy="310" r="5" fill="black" />
+  <line x1="235" y1="250" x2="170" y2="310" style="stroke:black;stroke-width:3" />
+<circle cx="296" cy="250" r="5" fill="black" />
+<circle cx="200" cy="240" r="5" fill="black" />
+  <line x1="296" y1="250" x2="200" y2="240" style="stroke:black;stroke-width:3" />
+<circle cx="235" cy="155" r="5" fill="black" />
+<circle cx="120" cy="170" r="5" fill="black" />
+  <line x1="235" y1="155" x2="120" y2="170" style="stroke:black;stroke-width:3" />
+<circle cx="360" cy="155" r="5" fill="black" />
+<circle cx="360" cy="200" r="5" fill="black" />
+  <line x1="360" y1="155" x2="360" y2="200" style="stroke:black;stroke-width:3" />
 </svg>

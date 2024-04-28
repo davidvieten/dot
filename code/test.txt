@@ -1,5 +1,5 @@
-leftwing rightpoint left offense net
-rightwing lefthash right defense walkline
-center dot left defense upwall
-rightdefense leftpoint right offense corner
-leftdefense righthash left defense hold
+leftwing lefthash left offense corner
+rightwing righthash left offense backdoor
+center dot left offense slot
+rightdefense rightpoint left offense walkline
+leftdefense leftpoint left offense upwall
