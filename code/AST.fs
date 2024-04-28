@@ -1,14 +1,25 @@
 module AST
 
-type Coordinate = {x: int; y: int}
-type Player = 
+type Coordinate = { x: int; y: int }
+
+type Side =
+    | Left
+    | Right
+
+type Zone =
+    | Offense
+    | Defense
+
+type DotPlace = Side * Zone
+
+type Player =
     | LeftWing
     | RightWing
     | Center
     | RightDefense
     | LeftDefense
 
-type StartPos = 
+type Location =
     | LeftHash of Coordinate
     | RightHash of Coordinate
     | Dot of Coordinate
@@ -17,7 +28,7 @@ type StartPos =
     | StackInside of Coordinate
     | StackOutside of Coordinate
 
-type EndRoute = 
+type EndRoute =
     | Net of Coordinate
     | WalkLine of Coordinate
     | DownWall of Coordinate
@@ -27,9 +38,13 @@ type EndRoute =
     | Slot of Coordinate
     | BackDoor of Coordinate
 
-type Route = {start: StartPos; endRoute: EndRoute; player:Player}
+type Position = Player * Location
+type Start = Position * DotPlace
+
+type Route =
+    { start: Start; endRoute: EndRoute }
+
 type Board = Route list
 
-   
 
 let canvasSize = 400

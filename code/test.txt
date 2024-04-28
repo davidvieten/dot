@@ -1,4 +1,5 @@
-leftdefense lefthash net
-rightwing dot corner
-center stackinside backdoor
-leftwing stackoutside hold
+leftwing rightpoint left offense net
+rightwing lefthash right defense walkline
+center dot left defense upwall
+rightdefense leftpoint right offense corner
+leftdefense righthash left defense hold
