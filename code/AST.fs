@@ -12,13 +12,6 @@ type Zone =
 
 type DotPlace = Side * Zone
 
-type Player =
-    | LeftWing
-    | RightWing
-    | Center
-    | RightDefense
-    | LeftDefense
-
 type Location =
     | LeftHash of Coordinate
     | RightHash of Coordinate
@@ -37,8 +30,7 @@ type EndRoute =
     | Slot of Coordinate
     | BackDoor of Coordinate
 
-type Position = Player * Location
-type Start = Position * DotPlace
+type Start = Location * DotPlace
 
 type Route =
     { start: Start; endRoute: EndRoute }

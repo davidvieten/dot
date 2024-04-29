@@ -5,9 +5,8 @@ open Combinator
 (*
     <expr> ::= <route>+
     <route>::= <start><endroute>
-   <start> ::= <position><dotplace>
+   <start> ::= <location><dotplace>
 <dotplace> ::= <side><zone>
-<position> ::= <player><location>
 <endroute> ::= net
             | walkline
             | downwall
@@ -20,7 +19,7 @@ open Combinator
             |  defense
     <side> ::= right
             |  left
-  <player> ::= leftwing
+  <location> ::= leftwing
             |  rightwing
             |  center
             |  rightdefense
@@ -37,12 +36,6 @@ let pad p = pbetween pws0 p pws0
 let expr, exprImpl = recparser()
 
 (*Parses the player string*)
-let player = 
-    (pstr "leftwing" |>> (fun _ -> LeftWing)) <|>
-    (pstr "rightwing" |>> (fun _ -> RightWing)) <|>
-    (pstr "center" |>> (fun _ -> Center)) <|>
-    (pstr "leftdefense" |>> (fun _ -> LeftDefense)) <|>
-    (pstr "rightdefense" |>> (fun _ -> RightDefense))
 
 let location (dotPlace: DotPlace) =
     match (dotPlace) with
@@ -95,17 +88,11 @@ let dotplace =
         (pad zone)
         (fun sz -> 
             (sz))|>>DotPlace
-        
-let position (dotPlace: DotPlace) =
-    pseq
-        (pad player)
-        (pad (location dotPlace))
-        (fun (p, l) -> 
-            (p, l)) |>> Position
+    
 
 let start (dotPlace: DotPlace)=
     pseq
-        (pad (position dotPlace))
+        (pad (location dotPlace))
         (pad dotplace)
         (fun (p, d) ->
             (p, d)) |>> Start
