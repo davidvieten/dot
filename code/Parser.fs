@@ -45,38 +45,23 @@ let player =
     (pstr "rightdefense" |>> (fun _ -> RightDefense))
 
 let location (dotPlace: DotPlace) =
-    match (dotPlace) with
-    | (Right, Offense) -> 
-            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 170; y = 250 })) <|>
-            (pstr "righthash" |>> (fun _ -> RightHash { x = 50; y = 250 })) <|>
-            (pstr "dot" |>> (fun _ -> Dot { x = 107; y = 250 })) <|>
-            (pstr "rightpoint" |>> (fun _ -> RightPoint { x = 50; y = 155 })) <|>
-            (pstr "leftpoint" |>> (fun _ -> LeftPoint { x = 170; y = 155 })) <|>
-            (pstr "stackinside" |>> (fun _ -> StackInside { x = 150; y = 220 })) <|>
-            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 65; y = 220 }))
-                
-    | (Left, Defense) -> 
-            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 50; y = 282 })) <|>
-            (pstr "righthash" |>> (fun _ -> RightHash { x = 170; y = 282 })) <|>
-            (pstr "dot" |>> (fun _ -> Dot { x = 107; y = 282 })) <|>
-            (pstr "stackinside" |>> (fun _ -> StackInside { x = 150; y = 310 })) <|>
-            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 200; y = 282 }))
-                
-    | (Left, Offense) -> 
-            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 360; y = 250 })) <|>
-            (pstr "righthash" |>> (fun _ -> RightHash { x = 235; y = 250 })) <|>
-            (pstr "dot" |>> (fun _ -> Dot { x = 296; y = 250 })) <|>
-            (pstr "rightpoint" |>> (fun _ -> RightPoint { x = 235; y = 155 })) <|>
-            (pstr "leftpoint" |>> (fun _ -> LeftPoint { x = 360; y = 155 })) <|>
-            (pstr "stackinside" |>> (fun _ -> StackInside { x = 340; y = 220 })) <|>
-            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 255; y = 220 }))
-                
-    | (Right, Defense) -> 
-            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 360; y = 282 })) <|>
-            (pstr "righthash" |>> (fun _ -> RightHash { x = 235; y = 282 })) <|>
-            (pstr "dot" |>> (fun _ -> Dot { x = 296; y = 282 })) <|>
-            (pstr "stackinside" |>> (fun _ -> StackInside { x = 255; y = 310 })) <|>
-            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 210; y = 282 }))
+    match dotPlace with
+    | (side, zone) ->
+        let x, y = 
+            match side, zone with
+            | Left, Offense -> 360, 250
+            | Left, Defense -> 50, 282
+            | Right, Offense -> 235, 250
+            | Right, Defense -> 235, 282
+        match x, y with
+        | x, y -> 
+            (pstr "lefthash" |>> (fun _ -> LeftHash { x = x; y = y })) <|>
+            (pstr "righthash" |>> (fun _ -> RightHash { x = x; y = y })) <|>
+            (pstr "dot" |>> (fun _ -> Dot { x = x; y = y })) <|>
+            (pstr "rightpoint" |>> (fun _ -> RightPoint { x = x; y = y - 95 })) <|>
+            (pstr "leftpoint" |>> (fun _ -> LeftPoint { x = x + 120; y = y - 95 })) <|>
+            (pstr "stackinside" |>> (fun _ -> StackInside { x = x + 110; y = y - 30 })) <|>
+            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = x - 85; y = y - 30 }))
 
 let side = 
     (pstr "right" |>> (fun _ -> Right)) <|>
@@ -90,13 +75,15 @@ let dotplace =
     pseq
         (pad side)
         (pad zone)
-        (fun sz -> (sz))|>>DotPlace
+        (fun sz -> 
+            (sz))|>>DotPlace
         
 let position (dotPlace: DotPlace) =
     pseq
         (pad player)
         (pad (location dotPlace))
-        (fun (p, l) -> (p, l)) |>> Position
+        (fun (p, l) -> 
+            (p, l)) |>> Position
 
 let start (dotPlace: DotPlace)=
     pseq
@@ -147,8 +134,8 @@ let route (dotPlace: DotPlace) =
 
 exprImpl :=
     pmany1 (
-        route (Left, Offense) <|>
         route (Left, Defense) <|>
+        route (Left, Offense) <|>
         route (Right, Offense) <|>
         route (Right, Defense)
     ) |>> List.concat
