@@ -9,8 +9,8 @@ let main args =
     match parse text with
     | Some ast ->
         printfn "%A" ast
-        // let svg = eval ast
-        // printfn "%s" svg
+        let svg = eval ast
+        printfn "%s" svg
     | None ->
         printfn "Invalid program."
     0
