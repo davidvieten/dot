@@ -45,24 +45,42 @@ let player =
     (pstr "rightdefense" |>> (fun _ -> RightDefense))
 
 let location (dotPlace: DotPlace) =
-    match dotPlace with
-    | (side, zone) ->
-        let x, y = 
-            match side, zone with
-            | Left, Offense -> 360, 250
-            | Left, Defense -> 50, 282
-            | Right, Offense -> 235, 250
-            | Right, Defense -> 235, 282
-        match x, y with
-        | x, y -> 
-            (pstr "lefthash" |>> (fun _ -> LeftHash { x = x; y = y })) <|>
-            (pstr "righthash" |>> (fun _ -> RightHash { x = x; y = y })) <|>
-            (pstr "dot" |>> (fun _ -> Dot { x = x; y = y })) <|>
-            (pstr "rightpoint" |>> (fun _ -> RightPoint { x = x; y = y - 95 })) <|>
-            (pstr "leftpoint" |>> (fun _ -> LeftPoint { x = x + 120; y = y - 95 })) <|>
-            (pstr "stackinside" |>> (fun _ -> StackInside { x = x + 110; y = y - 30 })) <|>
-            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = x - 85; y = y - 30 }))
-
+    match (dotPlace) with
+    | (Left, Offense) -> 
+            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 1; y = 1 })) <|>
+            (pstr "righthash" |>> (fun _ -> RightHash { x = 1; y = 1 })) <|>
+            (pstr "dot" |>> (fun _ -> Dot { x = 1; y = 1 })) <|>
+            (pstr "rightpoint" |>> (fun _ -> RightPoint { x = 1; y = 1 })) <|>
+            (pstr "leftpoint" |>> (fun _ -> LeftPoint { x = 1; y = 1 })) <|>
+            (pstr "stackinside" |>> (fun _ -> StackInside { x = 1; y = 1 })) <|>
+            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 1; y = 1 }))
+                
+    | (Left, Defense) -> 
+            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 2; y = 2 })) <|>
+            (pstr "righthash" |>> (fun _ -> RightHash { x = 2; y = 2 })) <|>
+            (pstr "dot" |>> (fun _ -> Dot { x = 2; y = 2 })) <|>
+            (pstr "rightpoint" |>> (fun _ -> RightPoint { x = 2; y = 2 })) <|>
+            (pstr "leftpoint" |>> (fun _ -> LeftPoint { x = 2; y = 2 })) <|>
+            (pstr "stackinside" |>> (fun _ -> StackInside { x = 2; y = 2 })) <|>
+            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 2; y = 2 }))
+                
+    | (Right, Offense) -> 
+            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 3; y = 3 })) <|>
+            (pstr "righthash" |>> (fun _ -> RightHash { x = 3; y = 3 })) <|>
+            (pstr "dot" |>> (fun _ -> Dot { x = 3; y = 3 })) <|>
+            (pstr "rightpoint" |>> (fun _ -> RightPoint { x = 3; y = 3 })) <|>
+            (pstr "leftpoint" |>> (fun _ -> LeftPoint { x = 3; y = 3 })) <|>
+            (pstr "stackinside" |>> (fun _ -> StackInside { x = 3; y = 3 })) <|>
+            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 3; y = 3 }))
+                
+    | (Right, Defense) -> 
+            (pstr "lefthash" |>> (fun _ -> LeftHash { x = 4; y = 4 })) <|>
+            (pstr "righthash" |>> (fun _ -> RightHash { x = 4; y = 4 })) <|>
+            (pstr "dot" |>> (fun _ -> Dot { x = 4; y = 4 })) <|>
+            (pstr "rightpoint" |>> (fun _ -> RightPoint { x = 4; y = 4 })) <|>
+            (pstr "leftpoint" |>> (fun _ -> LeftPoint { x = 4; y = 4 })) <|>
+            (pstr "stackinside" |>> (fun _ -> StackInside { x = 4; y = 4 })) <|>
+            (pstr "stackoutside" |>> (fun _ -> StackOutside { x = 4; y = 4 }))
 let side = 
     (pstr "right" |>> (fun _ -> Right)) <|>
     (pstr "left" |>> (fun _ -> Left))
