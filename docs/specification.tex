@@ -61,38 +61,41 @@
 \maketitle
 
 \subsection*{Introduction}
-{  Fortunately, I have had the privelage of being around the sport of 
-hockey for the majority of my lifetime. Over the years, it has become clear to me that the 
-current method of drawing face-off plays is outdated. A face-off takes place starting a game or
-following a whistle.  The ref drops the puck and two center-men battle for the puck.  Face-offs
-play in important role in hockey, as it is an oppurtunity to gain possesion of the puck. As a result
-coaches draw up routes for each of the 5 guys on the each, dictating what each player should do 
-on a face-off win.  Each team often has multiple of these set routes called "face-off plays." These
+{  Fortunately, I have had the privilege of being around the sport of
+hockey for the majority of my lifetime. Over the years, it has become clear to me that 
+the current method of drawing face-off plays is outdated. A face-off takes place starting a game or
+following a whistle. The ref drops the puck and two center-men battle for the puck. Face-offs
+play an important role in hockey, as it is an opportunity to gain possession of the puck. As a result
+coaches draw up routes for each of the 5 guys on the each, dictating what each player should do
+on a face-off win. Each team often has multiple of these set routes called "face-off plays." These
 faceoff plays may change on any given week depending on who the opponent is and what their weaknesses
-are. As a result, the players are responsible for memorizing their routes.  Currently, coaches either draw
+are. As a result, the players are responsible for memorizing their routes. Currently, coaches either draw
 up the faceoff plays on a white board and hope the players can remember it, or they draw them up on paper
-and distribute photo copies for the players to study. 
+and distribute photocopies for the players to study.
 
-The programming language "Dot" solves this problem. "Dot" allows coaches to create face-off plays in an svg 
-that can be emailed to players.  This language saves coaches a headache by providing a way easily distribute
+
+The programming language "Dot" solves this problem. "Dot" allows coaches to create face-off plays in an svg
+that can be emailed to players. This language saves coaches a headache by providing a way easily distribute
 face-off plays without wasting paper and ink to do so. Coaches will also be able to save face-off plays,
 allowing them to keep track of what plays they have used against who in the past. This ability to save face-off
-plays will also allow coaches to save scouting reports. Every week, coaches watch video on the opposing team to 
-get an idea of what they are in for come game time. While watching video, coaches can create and save the opposing 
-team's faceoff plays to determine the best counter plays.  "Dot" will save coaches time and allow players to 
-study their routes in an effiecent manner.}
+plays will also allow coaches to save scouting reports. Every week, coaches watch video on the opposing team to
+get an idea of what they are in for come game time. While watching video, coaches can create and save the opposing
+team's faceoff plays to determine the best counter plays. "Dot" will save coaches time and allow players to
+study their routes in an efficient manner.
+}
 
 \subsection*{Design Principles}
 {Several design principles guide Dot's development to address the problem of creating and
-distributing faceoff plays. With accessibiliy and usability at the forefront of priorities, Dot produces an 
-SVG allowing coaches to easily distribute visual represenations of plays. Efficiency and scalability are two factors
+distributing faceoff plays. With accessibility and usability at the forefront of priorities, Dot produces an
+SVG allowing coaches to easily distribute visual representations of plays. Efficiency and scalability are two factors
 that Dot seeks to achieve.
 The ability to save and organize face-off plays supports scalability by allowing coaches to implement libraries
-of stratgies/pre-scouts over time. Adaptability and extensabiliy are also fundamental design principles in the
-development of the langauge. Dot allows for the creation of custom plays designed for specific opponents, providing
-an advantage in the hockey world.  Furthermore, Dot's support for saving and analzying opponent's face-off plays
-contributes to its stratagic use as a tool for planning and adapting. Moreover, Dot is built with accessibiliy,
-efficiency, and adaptability in mind.}
+of strategies/pre-scouts over time. Adaptability and extensibility are also fundamental design principles in the
+development of the language. Dot allows for the creation of custom plays designed for specific opponents, providing
+an advantage in the hockey world. Furthermore, Dot's support for saving and analyzing opponent's face-off plays
+contributes to its strategic use as a tool for planning and adapting. Moreover, Dot is built with accessibility,
+efficiency, and adaptability in mind.
+}
 
 \pagebreak
 \subsection*{Examples}
@@ -109,15 +112,15 @@ efficiency, and adaptability in mind.}
      lefthash left offense backdoor\\
      righthash left offense slot\\
      dot left offense upwall\\
-     stackinside left offense net\\
-     stackoutside left offense walkline
+     rightpoint left offense net\\
+     leftpoint outside left offense walkline
 
 \vspace{0.5cm} 
 
-     lefthash left defense net\\
+     stackoutside left defense net\\
      righthash left defense walkline\\
      dot left defense net\\
-     stackinside left defense slot\\
+     leftpoint left defense slot\\
      stackoutside left defense backdoor
 
 
@@ -165,12 +168,11 @@ well as knowledge of the sport of hockey. The primitives help define areas on th
 
 \subsection*{Semantics}
 
-The basic building blocks of Dot are the players, locations, and end routes. Players can be left 
-wing, right wing, center, etc. Possible locations include the left hash, right hash, dot, etc. End 
+The basic building blocks of Dot are locations and end routes. Possible locations include the left hash, right hash, dot, etc. End 
 routes consist of options like net, walkline, corner, etc. The combined forms are made up of these basic values using different constructs such as tuples and 
-variant types. For instance, I combine a player and a location to define a “position”. A “start” is 
-created by combining a position with a dot place. Routes are formed by combining a start with an end 
-route. Programs are run by inputting a txt. This can be done on the command line. When evaluating a program, 
+variant types. For instance, I combine a side and zone to define a “dotplace”. A “start” is 
+created by combining a location with a dot place. Routes are formed by combining a start with an endroute.
+ Programs are run by inputting a txt. This can be done on the command line. When evaluating a program, 
 an svg. file is produced with all the routes specified through the txt. file.
 
 % DO NOT DELETE ANYTHING BELOW THIS LINE
