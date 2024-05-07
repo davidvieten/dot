@@ -12,28 +12,28 @@ type Zone =
 
 type DotPlace = Side * Zone
 
-type Location =
-    | LeftHash of Coordinate
-    | RightHash of Coordinate
-    | Dot of Coordinate
-    | RightPoint of Coordinate
-    | LeftPoint of Coordinate
-    | StackInside of Coordinate
-    | StackOutside of Coordinate
+type StartRoute =
+    | LeftHash 
+    | RightHash 
+    | Dot 
+    | RightPoint 
+    | LeftPoint 
+    | StackInside 
+    | StackOutside 
 
 type EndRoute =
-    | Net of Coordinate
-    | WalkLine of Coordinate
-    | DownWall of Coordinate
-    | UpWall of Coordinate
-    | Corner of Coordinate
-    | Slot of Coordinate
-    | BackDoor of Coordinate
+    | Net 
+    | WalkLine 
+    | Hold 
+    | HalfWall 
+    | Corner 
+    | Slot 
+    | BackDoor 
 
-type Start = Location * DotPlace
+type RouteDef = StartRoute * EndRoute
 
 type Route =
-    { start: Start; endRoute: EndRoute }
+    { routedef: RouteDef; dotplace: DotPlace}
 
 type Board = Route list
 
