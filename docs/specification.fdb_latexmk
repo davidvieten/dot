@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1714443280 "/Users/davidvieten/cs334/project/cs334-project-dav3/docs/specification.tex" "specification.pdf" "specification" 1714443281 0
-  "/Users/davidvieten/cs334/project/cs334-project-dav3/docs/specification.tex" 1714443280 7662 48f92fdb1249478a30d072aa392708e2 ""
+["pdflatex"] 1715278319 "/Users/davidvieten/cs334/project/cs334-project-dav3/docs/specification.tex" "specification.pdf" "specification" 1715278320 0
+  "/Users/davidvieten/cs334/project/cs334-project-dav3/docs/specification.tex" 1715278319 8122 29eeb6f1e6c3b92fc669c2a0c3eb6049 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -12,8 +12,10 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -202,9 +204,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1708904196 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1708904135 7883464 ba16a21c8d9208094fe0655573342b39 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "specification.aux" 1714443281 554 dd2b48f1aba1e3b725040b4d3abf7fbe "pdflatex"
-  "specification.out" 1714443281 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "specification.tex" 1714443280 7662 48f92fdb1249478a30d072aa392708e2 ""
+  "specification.aux" 1715278320 743 6d03279b28eb4566a7cda074733fe3c4 "pdflatex"
+  "specification.out" 1715278320 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "specification.tex" 1715278319 8122 29eeb6f1e6c3b92fc669c2a0c3eb6049 ""
   (generated)
   "specification.aux"
   "specification.log"

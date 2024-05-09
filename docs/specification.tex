@@ -134,37 +134,50 @@ well as knowledge of the sport of hockey. The primitives help define areas on th
  strategic moves can then be represented off a faceoff. By understanding these core concepts, users can effectively design 
  player movements that will produce an advantage on game day.
 
+
+ \pagebreak
 \subsection*{Formal Syntax}
 \begin{verbatim}
-    <expr> ::= <route>+
-    <route>::= <start><endroute>
-   <start> ::= <location><dotplace>
-<dotplace> ::= <side><zone>
-<endroute> ::= net
-            | walkline
-            | downwall
-            | upwall
-            | corner
-            | hold
-            | slot
-            | backdoor   
-    <zone> ::= offense
-            |  defense
-    <side> ::= right
-            |  left
-  <location> ::= leftwing
-            |  rightwing
-            |  center
-            |  rightdefense
-            |  leftdefense
-<location> ::= lefthash
-            |  righthash
-            |  dot
-            |  rightpoint
-            |  leftpoint
-            |  stackinside
-            |  stackoutside   
+     <expr> ::= <route>+
+     <route>::= <routedef><dotplace>
+ <routedef> ::= <startroute><endroute>
+ <dotplace> ::= <side><zone>
+ <endroute> ::= net
+             | walkline
+             | downwall
+             | upwall
+             | corner
+             | hold
+             | slot
+             | backdoor   
+     <zone> ::= offense
+             |  defense
+     <side> ::= right
+             |  left
+ <startroute> ::= lefthash
+             |  righthash
+             |  dot
+             |  rightpoint
+             |  leftpoint
+             |  stackinside
+             |  stackoutside   
    \end{verbatim}
+
+
+   \begin{table}[h!]
+     \begin{center}
+       \caption{Language Semantics.}
+       \label{tab:table1}
+       \begin{tabular}{l|c|r|r} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
+         \textbf{Syntax} & \textbf{Abstract Syntax} & \textbf{Prec./Assoc} & \textbf{Meaning}\\
+         \hline
+         \verb|<routeef>| & 1110.1 & a\\
+         \verb|<zone>| & 10.1 & n/a & zone is primative\\
+         3 & 23.113231 & c\\
+         4 & woooo\\
+       \end{tabular}
+     \end{center}
+   \end{table}
 
 \subsection*{Semantics}
 
