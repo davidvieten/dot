@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1715278319 "/Users/davidvieten/cs334/project/cs334-project-dav3/docs/specification.tex" "specification.pdf" "specification" 1715278320 0
-  "/Users/davidvieten/cs334/project/cs334-project-dav3/docs/specification.tex" 1715278319 8122 29eeb6f1e6c3b92fc669c2a0c3eb6049 ""
+["pdflatex"] 1715283476 "/Users/davidvieten/cs334/project/cs334-project-dav3/docs/specification.tex" "specification.pdf" "specification" 1715283477 0
+  "/Users/davidvieten/cs334/project/cs334-project-dav3/docs/specification.tex" 1715283476 8640 ec07fb794b039d92f97149e5ed6ab7fc ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -27,6 +27,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1136849748 45758 19968a0990191524e34e1994d4a31cb6 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1136849748 44729 811d6c62865936705a31c797a1d5dada ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb" 1136849748 46026 6dab18b61c907687b520c72847215a68 ""
@@ -186,6 +187,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty" 1601326656 274 5ae372b7df79135d240456a1c6f2cf9a ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty" 1601326656 325 f9f16d12354225b7dd52a3321f085955 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/pgfopts/pgfopts.sty" 1405118212 5540 d5c60cf09c59da351aa4023ed084e4eb ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/omlptm.fd" 1137110629 577 008ea4bacb8ccf8c2a39dc94e000ef1f ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd" 1137110629 985 1ed784d7bfe47179f3550d2303b073f8 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ptm.fd" 1137110629 961 15056f4a61917ceed3a44e4ac11fcc52 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/times.sty" 1586716065 856 8e0e5c8cca7b18e0400f97f5a2b90a99 ""
@@ -193,6 +195,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657483315 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/sectsty/sectsty.sty" 1137110779 22423 d476012cd03f82f9475ad54ba6cd3267 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/todonotes/todonotes.sty" 1675198268 21300 a6e0d5f13b9360f0419aa0d6b30a9c96 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/tools/array.sty" 1667332637 12691 5b542990fe866f3d772f71346cf85b95 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty" 1654720880 10214 de3e21cfc0eccc98ca7f8dac0ef263d2 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/tools/enumerate.sty" 1654720880 3468 46ba9177f0f0a79fe79845d3eebff113 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/tools/xspace.sty" 1654720880 4545 4c279ac9292a1be8afa9ab2f1d3299c2 ""
@@ -204,9 +207,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1708904196 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1708904135 7883464 ba16a21c8d9208094fe0655573342b39 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "specification.aux" 1715278320 743 6d03279b28eb4566a7cda074733fe3c4 "pdflatex"
-  "specification.out" 1715278320 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "specification.tex" 1715278319 8122 29eeb6f1e6c3b92fc669c2a0c3eb6049 ""
+  "specification.aux" 1715283477 684 56345745fd45772c510d9d5d332ffc82 "pdflatex"
+  "specification.out" 1715283477 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "specification.tex" 1715283476 8640 ec07fb794b039d92f97149e5ed6ab7fc ""
   (generated)
   "specification.aux"
   "specification.log"

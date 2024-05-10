@@ -96,10 +96,10 @@ let rec evalRouteEnd (routedef:RouteDef) (dotplace: DotPlace)=
 let rec evalRoute (routedef: RouteDef) (dotplace: DotPlace): string =
     let start = evalRouteStart(routedef)(dotplace)
     let finish = evalRouteEnd (routedef)(dotplace)
-    "<circle cx=\"" + (start.x |> string) + "\"" +
+    "  <circle cx=\"" + (start.x |> string) + "\"" +
     " cy=\"" + (start.y |> string) + "\"" +
     " r=\"5\" fill=\"black\" />\n" +
-    "<circle cx=\"" + (finish.x |> string) + "\"" +
+    "  <circle cx=\"" + (finish.x |> string) + "\"" +
     " cy=\"" + (finish.y |> string) + "\"" +
     " r=\"5\" fill=\"black\" />\n" +
     "  <line x1=\"" + (start.x |> string) + "\"" +

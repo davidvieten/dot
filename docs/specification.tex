@@ -35,6 +35,8 @@
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\headwidth}{\textwidth}
 \renewcommand{\footrulewidth}{0.4pt}
+\usepackage{array}
+
 
 % These let you use common environments
 \newtheorem{claim}{Claim}
@@ -63,25 +65,25 @@
 \subsection*{Introduction}
 {  Fortunately, I have had the privilege of being around the sport of
 hockey for the majority of my lifetime. Over the years, it has become clear to me that 
-the current method of drawing face-off plays is outdated. A face-off takes place starting a game or
-following a whistle. The ref drops the puck and two center-men battle for the puck. Face-offs
-play an important role in hockey, as it is an opportunity to gain possession of the puck. As a result
-coaches draw up routes for each of the 5 guys on the each, dictating what each player should do
-on a face-off win. Each team often has multiple of these set routes called "face-off plays." These
-faceoff plays may change on any given week depending on who the opponent is and what their weaknesses
+the current method of drawing face-off plays is outdated and inefficient. A face-off takes place at the start of a game or
+following a whistle. The ref drops the puck and two center-men battle for the possesion. Face-offs
+play an important role in hockey, as it is an opportunity to gain possession and run a set play. As a result
+coaches draw up routes for each of the 5 guys on the ice, dictating the route of each player on a face-off win. 
+Often, teams have multiple versions of these set routes called "face-off plays." These
+face-off plays may change on any given week depending on who the opponent is and what their weaknesses
 are. As a result, the players are responsible for memorizing their routes. Currently, coaches either draw
 up the faceoff plays on a white board and hope the players can remember it, or they draw them up on paper
 and distribute photocopies for the players to study.
 
 
 The programming language "Dot" solves this problem. "Dot" allows coaches to create face-off plays in an svg
-that can be emailed to players. This language saves coaches a headache by providing a way easily distribute
+that can be emailed to players. This language saves coaches a headache by providing a way to easily distribute
 face-off plays without wasting paper and ink to do so. Coaches will also be able to save face-off plays,
 allowing them to keep track of what plays they have used against who in the past. This ability to save face-off
-plays will also allow coaches to save scouting reports. Every week, coaches watch video on the opposing team to
-get an idea of what they are in for come game time. While watching video, coaches can create and save the opposing
-team's faceoff plays to determine the best counter plays. "Dot" will save coaches time and allow players to
-study their routes in an efficient manner.
+plays will allow coaches to save scouting reports, increasing prepardness for the team. In a typical game week, coaches 
+will watch video on the opposing team to get an idea of what they will be faced with come game time. While watching video, 
+coaches can create and save the opposing team's faceoff plays to determine the best counter plays. "Dot" will save coaches 
+time and allow players to study their routes in an efficient manner.
 }
 
 \subsection*{Design Principles}
@@ -100,28 +102,27 @@ efficiency, and adaptability in mind.
 \pagebreak
 \subsection*{Examples}
 
-    lefthash right offense corner\\
-     righthash right offense backdoor\\
-     dot right offense slot\\
-     stackinside right offense walkline\\
-     stackoutside right offense upwall
-
-
-\vspace{0.5cm} 
-
-     lefthash left offense backdoor\\
-     righthash left offense slot\\
-     dot left offense upwall\\
-     rightpoint left offense net\\
-     leftpoint outside left offense walkline
+  lefthash net right offense\\
+  righthash corner right offense\\
+  dot slot right offense\\
+  leftpoint walkline right offense\\
+  rightpoint halfwall right offense
 
 \vspace{0.5cm} 
 
-     stackoutside left defense net\\
-     righthash left defense walkline\\
-     dot left defense net\\
-     leftpoint left defense slot\\
-     stackoutside left defense backdoor
+     stackinside corner right defense\\
+     righthash backdoor right defense\\
+     dot slot right defense\\
+     rightpoint upwall right defense\\
+     leftpoint hold right defense
+
+\vspace{0.5cm} 
+
+     lefthash hold left defense\\
+     righthash slot left defense\\
+     dot corner left defense\\
+     stackinside net left defense \\
+     stackoutside hold defense
 
 
 \subsection*{Language Concepts}
@@ -138,55 +139,55 @@ well as knowledge of the sport of hockey. The primitives help define areas on th
  \pagebreak
 \subsection*{Formal Syntax}
 \begin{verbatim}
-     <expr> ::= <route>+
-     <route>::= <routedef><dotplace>
- <routedef> ::= <startroute><endroute>
- <dotplace> ::= <side><zone>
- <endroute> ::= net
-             | walkline
-             | downwall
-             | upwall
-             | corner
-             | hold
-             | slot
-             | backdoor   
-     <zone> ::= offense
-             |  defense
-     <side> ::= right
-             |  left
- <startroute> ::= lefthash
-             |  righthash
-             |  dot
-             |  rightpoint
-             |  leftpoint
-             |  stackinside
-             |  stackoutside   
+        <expr> ::= <route>+
+        <route>::= <routedef><dotplace>
+    <routedef> ::= <startroute><endroute>
+    <dotplace> ::= <side><zone>
+    <endroute> ::= net
+                | walkline
+                | downwall
+                | upwall
+                | corner
+                | hold
+                | slot
+                | backdoor   
+        <zone> ::= offense
+                |  defense
+        <side> ::= right
+                |  left
+  <startroute> ::= lefthash
+                |  righthash
+                |  dot
+                |  rightpoint
+                |  leftpoint
+                |  stackinside
+                |  stackoutside   
    \end{verbatim}
 
-
-   \begin{table}[h!]
-     \begin{center}
-       \caption{Language Semantics.}
-       \label{tab:table1}
-       \begin{tabular}{l|c|r|r} % <-- Alignments: 1st column left, 2nd middle and 3rd right, with vertical lines in between
-         \textbf{Syntax} & \textbf{Abstract Syntax} & \textbf{Prec./Assoc} & \textbf{Meaning}\\
-         \hline
-         \verb|<routeef>| & 1110.1 & a\\
-         \verb|<zone>| & 10.1 & n/a & zone is primative\\
-         3 & 23.113231 & c\\
-         4 & woooo\\
-       \end{tabular}
-     \end{center}
+   \subsection*{Semantics}
+   \begin{table}[htbp]
+     \centering
+     \caption{Semantics of Language}
+     \begin{tabular}{|p{2cm}|p{4cm}|p{2cm}|p{6cm}|}
+       \hline
+       \textbf{Syntax} & \textbf{Abstract Syntax} & \textbf{Prec./Assoc.} & \textbf{Meaning} \\
+       \hline
+       \textless side\textgreater{}& Side of string & N/A & Side is primitive. Represents the sides of the ice: "right" or "left". \\
+       \hline
+       \textless zone\textgreater{}& Zone of string & N/A & Zone is primitive. Represents the zones of teh ice where players will line up.: "offense" or "defense". \\
+       \hline
+       \textless route\textgreater{} & Route of RouteDef * DotPlace & N/A & Route is a combing form. Represents a path or route of a player on the ice, defined by a route definition and a dot placement. \\
+       \hline
+       \textless routedef\textgreater{} & RouteDef of StartRoute * EndRoute & N/A  & routedef is a combining form. Represents the definition of a route, consisting of a start point and an end point. \\
+       \hline
+       \textless dotplace\textgreater{} & DotPlace of Side * Zone & N/A  & dotplace is combining form. Represents the placement of a dot along a route, defined by side and zone. \\
+       \hline
+       \textless startroute\textgreater{} & StartRoute of string & N/A & startroute is a primitive. Represents the possible starting points or areas of a route. \\
+       \hline
+       \textless endroute\textgreater{} & EndRoute of string & N/A & endroute is a primitive. Represents the possible ending points of a route. \\
+       \hline
+     \end{tabular}
    \end{table}
-
-\subsection*{Semantics}
-
-The basic building blocks of Dot are locations and end routes. Possible locations include the left hash, right hash, dot, etc. End 
-routes consist of options like net, walkline, corner, etc. The combined forms are made up of these basic values using different constructs such as tuples and 
-variant types. For instance, I combine a side and zone to define a “dotplace”. A “start” is 
-created by combining a location with a dot place. Routes are formed by combining a start with an endroute.
- Programs are run by inputting a txt. This can be done on the command line. When evaluating a program, 
-an svg. file is produced with all the routes specified through the txt. file.
 
 % DO NOT DELETE ANYTHING BELOW THIS LINE
 \end{document}
