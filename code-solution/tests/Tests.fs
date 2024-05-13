@@ -1,6 +1,4 @@
 namespace tests
-
-
 open System
 open Microsoft.VisualStudio.TestTools.UnitTesting
 open Parser

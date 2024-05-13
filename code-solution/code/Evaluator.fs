@@ -128,3 +128,4 @@ let eval (board: Board) : string =
         "<image href=\"Rink.png\" height=\"" + sz + "\" width=\"" + sz + "\" />\n" +
         (evalBoard board)
         + "</svg>\n"
+        
