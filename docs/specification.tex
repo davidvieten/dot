@@ -101,27 +101,79 @@ efficiency, and adaptability in mind.
 
 \pagebreak
 \subsection*{Examples}
-  lefthash net right offense\\
-  righthash corner right offense\\
-  dot slot right offense\\
-  leftpoint walkline right offense\\
-  rightpoint halfwall right offense
 
-\vspace{0.5cm} 
+\begin{enumerate}
+  \item
+  dotnet run Boston.dot
 
-     stackinside corner right defense\\
-     righthash backdoor right defense\\
-     dot slot right defense\\
-     rightpoint upwall right defense\\
-     leftpoint hold right defense
+  \begin{verbatim}
+  <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <image href="Rink.png" height="400" width="400" />
+  <circle cx="239" cy="250" r="5" fill="black" />
+  <circle cx="200" cy="300" r="5" fill="black" />
+  <line x1="239" y1="250" x2="200" y2="300" style="stroke:black;stroke-width:3" />
+  <circle cx="353" cy="250" r="5" fill="black" />
+  <circle cx="363" cy="350" r="5" fill="black" />
+  <line x1="353" y1="250" x2="363" y2="350" style="stroke:black;stroke-width:3" />
+  <circle cx="296" cy="250" r="5" fill="black" />
+  <circle cx="200" cy="270" r="5" fill="black" />
+  <line x1="296" y1="250" x2="200" y2="270" style="stroke:black;stroke-width:3" />
+  <circle cx="239" cy="160" r="5" fill="black" />
+  <circle cx="139" cy="160" r="5" fill="black" />
+  <line x1="239" y1="160" x2="139" y2="160" style="stroke:black;stroke-width:3" />
+  <circle cx="353" cy="160" r="5" fill="black" />
+  <circle cx="376" cy="220" r="5" fill="black" />
+  <line x1="353" y1="160" x2="376" y2="220" style="stroke:black;stroke-width:3" />
+  </svg>
+  \end{verbatim}
 
-\vspace{0.5cm} 
+\item
+  dotnet run Ephs.dot 
+  \begin{verbatim}
+  <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <image href="Rink.png" height="400" width="400" />
+  <circle cx="249" cy="310" r="5" fill="black" />
+  <circle cx="356" cy="350" r="5" fill="black" />
+  <line x1="249" y1="310" x2="356" y2="350" style="stroke:black;stroke-width:3" />
+  <circle cx="353" cy="280" r="5" fill="black" />
+  <circle cx="183" cy="310" r="5" fill="black" />
+  <line x1="353" y1="280" x2="183" y2="310" style="stroke:black;stroke-width:3" />
+  <circle cx="296" cy="280" r="5" fill="black" />
+  <circle cx="200" cy="270" r="5" fill="black" />
+  <line x1="296" y1="280" x2="200" y2="270" style="stroke:black;stroke-width:3" />
+  <circle cx="239" cy="280" r="5" fill="black" />
+  <circle cx="239" cy="280" r="5" fill="black" />
+  <line x1="239" y1="280" x2="239" y2="280" style="stroke:black;stroke-width:3" />
+  <circle cx="353" cy="310" r="5" fill="black" />
+  <circle cx="383" cy="230" r="5" fill="black" />
+  <line x1="353" y1="310" x2="383" y2="230" style="stroke:black;stroke-width:3" />
+  </svg>
+  \end{verbatim}
 
-     lefthash hold left defense\\
-     righthash slot left defense\\
-     dot corner left defense\\
-     stackinside net left defense \\
-     stackoutside hold defense
+  \pagebreak
+\item
+  dotnet run Maverick.dot
+  \begin{verbatim}
+  <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <image href="Rink.png" height="400" width="400" />
+  <circle cx="50" cy="250" r="5" fill="black" />
+  <circle cx="40" cy="350" r="5" fill="black" />
+  <line x1="50" y1="250" x2="40" y2="350" style="stroke:black;stroke-width:3" />
+  <circle cx="164" cy="250" r="5" fill="black" />
+  <circle cx="200" cy="300" r="5" fill="black" />
+  <line x1="164" y1="250" x2="200" y2="300" style="stroke:black;stroke-width:3" />
+  <circle cx="107" cy="250" r="5" fill="black" />
+  <circle cx="200" cy="270" r="5" fill="black" />
+  <line x1="107" y1="250" x2="200" y2="270" style="stroke:black;stroke-width:3" />
+  <circle cx="50" cy="160" r="5" fill="black" />
+  <circle cx="27" cy="220" r="5" fill="black" />
+  <line x1="50" y1="160" x2="27" y2="220" style="stroke:black;stroke-width:3" />
+  <circle cx="164" cy="160" r="5" fill="black" />
+  <circle cx="264" cy="160" r="5" fill="black" />
+  <line x1="164" y1="160" x2="264" y2="160" style="stroke:black;stroke-width:3" />
+  </svg>
+  \end{verbatim}
+\end{enumerate}
 
 
 \subsection*{Language Concepts}
@@ -144,8 +196,7 @@ well as knowledge of the sport of hockey. The primitives help define areas on th
     <dotplace> ::= <side><zone>
     <endroute> ::= net
                 | walkline
-                | downwall
-                | upwall
+                | halfwall
                 | corner
                 | hold
                 | slot
@@ -162,7 +213,7 @@ well as knowledge of the sport of hockey. The primitives help define areas on th
                 |  stackinside
                 |  stackoutside   
    \end{verbatim}
-
+\pagebreak
    \subsection*{Semantics}
    \begin{table}[htbp]
      \centering
@@ -171,15 +222,15 @@ well as knowledge of the sport of hockey. The primitives help define areas on th
        \hline
        \textbf{Syntax} & \textbf{Abstract Syntax} & \textbf{Prec./Assoc.} & \textbf{Meaning} \\
        \hline
-       \textless side\textgreater{}& Side of string & N/A & Side is primitive. Represents the sides of the ice: "right" or "left". \\
+       \textless side\textgreater{}& Side of string & N/A & side is primitive. Represents the sides of the ice: "right" or "left". \\
        \hline
-       \textless zone\textgreater{}& Zone of string & N/A & Zone is primitive. Represents the zones of teh ice where players will line up.: "offense" or "defense". \\
+       \textless zone\textgreater{}& Zone of string & N/A & zone is primitive. Represents the zones of teh ice where players will line up.: "offense" or "defense". \\
        \hline
-       \textless route\textgreater{} & Route of RouteDef * DotPlace & N/A & Route is a combing form. Represents a path or route of a player on the ice, defined by a route definition and a dot placement. \\
+       \textless route\textgreater{} & Route of RouteDef * DotPlace & N/A & route is a combing form. Represents a route of a player on the ice, defined by a route definition and a dot placement. Route is a record of RouteDef and DotPlace. \\
        \hline
-       \textless routedef\textgreater{} & RouteDef of StartRoute * EndRoute & N/A  & routedef is a combining form. Represents the definition of a route, consisting of a start point and an end point. Dictates the coordinates of startroute and endroute. \\
+       \textless routedef\textgreater{} & RouteDef of StartRoute * EndRoute & N/A  & routedef is a combining form. Represents the definition of a route, consisting of a start point and an end point. Dictates the coordinates of startroute and endroute. RouteDef is a tuple of StartRoute and EndRoute. \\
        \hline
-       \textless dotplace\textgreater{} & DotPlace of Side * Zone & N/A  & dotplace is combining form. Represents the placement of a dot along a route, defined by side and zone. \\
+       \textless dotplace\textgreater{} & DotPlace of Side * Zone & N/A  & dotplace is combining form. Represents the placement of a dot along a route, defined by side and zone. DotPlace is a tuple of Side * Zone\\
        \hline
        \textless startroute\textgreater{} & StartRoute of string & N/A & startroute is a primitive. Represents the possible starting points or areas of a route. Eval turns these into coordinates. \\
        \hline
@@ -190,13 +241,13 @@ well as knowledge of the sport of hockey. The primitives help define areas on th
 
   \pagebreak
 \subsection*{Remaining Work}
-{Right now, Dot is capable of producing routes for a singular team either on the offensive
-or defensive side of the dot. The next step to further inprove this langauge is to 
-incorperate the ability to show players skating with or passing the puck. This requires
+{Right now, Dot is capable of producing routes for a single team, either on the offensive
+or defensive side of the dot. The next step to further improve this langauge is to 
+incorporate the ability to show players either skating with or passing the puck. This requires
 drawing dotted and squiggly lines as opposed to stright lines. By doing this, players would know
 their routes of the face-off, as well as the where the puck will be. Given our set time period,
-I am unable to implement this feature. With some more experience in SVG, I think this feature
-would greatly enhance the abilities of Dot.}
+I am unable to implement this feature. With some more experience in SVG, I think I could add 
+this feature, and it would greatly enhance the abilities of Dot.}
 
 % DO NOT DELETE ANYTHING BELOW THIS LINE
 \end{document}

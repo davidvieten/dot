@@ -10,7 +10,7 @@ let rec evalDot (dotplace: DotPlace) =
     |Right, Defense -> {x=296; y = 280}
     |Left, Defense -> {x=107; y = 280}
 
-(*Usingt a DotPlace and RouteDef, determines where the coodinates of a start route should be placed
+(*Using a DotPlace and RouteDef, determines where the coodinates of a start route should be placed
 Uses the dotplace as a reference and adds/subtracts from there*)
 let rec evalRouteStart (routedef:RouteDef) (dotplace: DotPlace)=
     let dot = evalDot (dotplace)

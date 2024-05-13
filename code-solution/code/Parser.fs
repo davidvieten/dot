@@ -9,8 +9,7 @@ open Combinator
 <dotplace> ::= <side><zone>
 <endroute> ::= net
             | walkline
-            | downwall
-            | upwall
+            | halfwall
             | corner
             | hold
             | slot

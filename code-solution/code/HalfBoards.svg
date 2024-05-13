@@ -1,18 +1,18 @@
 <svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-  <image href="Rink.png" height="400" width="400" />
-<circle cx="239" cy="250" r="5" fill="black" />
+<image href="Rink.png" height="400" width="400" />
+<circle cx="50" cy="250" r="5" fill="black" />
+<circle cx="40" cy="350" r="5" fill="black" />
+<line x1="50" y1="250" x2="40" y2="350" style="stroke:black;stroke-width:3" />
+<circle cx="164" cy="250" r="5" fill="black" />
 <circle cx="200" cy="300" r="5" fill="black" />
-  <line x1="239" y1="250" x2="200" y2="300" style="stroke:black;stroke-width:3" />
-<circle cx="353" cy="250" r="5" fill="black" />
-<circle cx="363" cy="350" r="5" fill="black" />
-  <line x1="353" y1="250" x2="363" y2="350" style="stroke:black;stroke-width:3" />
-<circle cx="296" cy="250" r="5" fill="black" />
+<line x1="164" y1="250" x2="200" y2="300" style="stroke:black;stroke-width:3" />
+<circle cx="107" cy="250" r="5" fill="black" />
 <circle cx="200" cy="270" r="5" fill="black" />
-  <line x1="296" y1="250" x2="200" y2="270" style="stroke:black;stroke-width:3" />
-<circle cx="239" cy="160" r="5" fill="black" />
-<circle cx="139" cy="160" r="5" fill="black" />
-  <line x1="239" y1="160" x2="139" y2="160" style="stroke:black;stroke-width:3" />
-<circle cx="353" cy="160" r="5" fill="black" />
-<circle cx="376" cy="220" r="5" fill="black" />
-  <line x1="353" y1="160" x2="376" y2="220" style="stroke:black;stroke-width:3" />
+<line x1="107" y1="250" x2="200" y2="270" style="stroke:black;stroke-width:3" />
+<circle cx="50" cy="160" r="5" fill="black" />
+<circle cx="27" cy="220" r="5" fill="black" />
+<line x1="50" y1="160" x2="27" y2="220" style="stroke:black;stroke-width:3" />
+<circle cx="164" cy="160" r="5" fill="black" />
+<circle cx="264" cy="160" r="5" fill="black" />
+<line x1="164" y1="160" x2="264" y2="160" style="stroke:black;stroke-width:3" />
 </svg>

@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1715613800 "/Users/davidvieten/cs334/project/cs334-project-dav3/docs/specification.tex" "specification.pdf" "specification" 1715613801 0
-  "/Users/davidvieten/cs334/project/cs334-project-dav3/docs/specification.tex" 1715613800 9380 9df175f80a24e01fc39834865f4588f8 ""
+["pdflatex"] 1715619578 "/Users/davidvieten/cs334/project/cs334-project-dav3/docs/specification.tex" "specification.pdf" "specification" 1715619579 0
+  "/Users/davidvieten/cs334/project/cs334-project-dav3/docs/specification.tex" 1715619578 12336 bdcffb21a8118dbcab7e0c706feabb81 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -206,9 +206,9 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1708904196 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1708904135 7883464 ba16a21c8d9208094fe0655573342b39 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "specification.aux" 1715613801 684 1b35f5a4bab896237ffb44a588770bd6 "pdflatex"
-  "specification.out" 1715613801 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "specification.tex" 1715613800 9380 9df175f80a24e01fc39834865f4588f8 ""
+  "specification.aux" 1715619579 684 d29122403df699516f2dfb8164cccba1 "pdflatex"
+  "specification.out" 1715619578 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "specification.tex" 1715619578 12336 bdcffb21a8118dbcab7e0c706feabb81 ""
   (generated)
   "specification.aux"
   "specification.log"
