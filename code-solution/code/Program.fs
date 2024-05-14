@@ -6,7 +6,7 @@ open System.Diagnostics
 [<EntryPoint>]
 let main args =
     if args.Length < 1 then
-        printfn "Usage: please provide a .dot file."
+        printfn "Usage: please provide a .dot file and optionally, a new filename for the resulting SVG."
         exit 1
     let file = args[0]
     if args.Length > 2 then 
