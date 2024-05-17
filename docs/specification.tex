@@ -218,23 +218,23 @@ well as knowledge of the sport of hockey. The primitives help define areas on th
    \begin{table}[htbp]
      \centering
      \caption{Semantics of Language}
-     \begin{tabular}{|p{2cm}|p{4cm}|p{2cm}|p{6cm}|}
+     \begin{tabular}{|p{2cm}|p{4cm}|p{6cm}|}
        \hline
-       \textbf{Syntax} & \textbf{Abstract Syntax} & \textbf{Prec./Assoc.} & \textbf{Meaning} \\
+       \textbf{Syntax} & \textbf{Abstract Syntax} & \textbf{Meaning} \\
        \hline
-       \textless side\textgreater{}& Side of string & N/A & side is primitive. Represents the sides of the ice: "right" or "left". \\
+       \textless side\textgreater{}& Side of string & side is primitive. Represents the sides of the ice: "right" or "left". \\
        \hline
-       \textless zone\textgreater{}& Zone of string & N/A & zone is primitive. Represents the zones of teh ice where players will line up.: "offense" or "defense". \\
+       \textless zone\textgreater{}& Zone of string & zone is primitive. Represents the zones of the ice where players will line up.: "offense" or "defense". \\
        \hline
-       \textless route\textgreater{} & Route of RouteDef * DotPlace & N/A & route is a combing form. Represents a route of a player on the ice, defined by a route definition and a dot placement. Route is a record of RouteDef and DotPlace. \\
+       \textless route\textgreater{} & Route of RouteDef * DotPlace & route is a combing form. Represents a route of a player on the ice, defined by a route definition and a dot placement. Route is a record of RouteDef and DotPlace. \\
        \hline
-       \textless routedef\textgreater{} & RouteDef of StartRoute * EndRoute & N/A  & routedef is a combining form. Represents the definition of a route, consisting of a start point and an end point. Dictates the coordinates of startroute and endroute. RouteDef is a tuple of StartRoute and EndRoute. \\
+       \textless routedef\textgreater{} & RouteDef of StartRoute * EndRoute & routedef is a combining form. Represents the definition of a route, consisting of a start point and an end point. Dictates the coordinates of startroute and endroute. RouteDef is a tuple of StartRoute and EndRoute. \\
        \hline
-       \textless dotplace\textgreater{} & DotPlace of Side * Zone & N/A  & dotplace is combining form. Represents the placement of a dot along a route, defined by side and zone. DotPlace is a tuple of Side * Zone\\
+       \textless dotplace\textgreater{} & DotPlace of Side * Zone & dotplace is combining form. Represents the placement of a dot along a route, defined by side and zone. DotPlace is a tuple of Side * Zone\\
        \hline
-       \textless startroute\textgreater{} & StartRoute of string & N/A & startroute is a primitive. Represents the possible starting points or areas of a route. Eval turns these into coordinates. \\
+       \textless startroute\textgreater{} & StartRoute of string & startroute is a primitive. Represents the possible starting points or areas of a route. Eval turns these into coordinates. \\
        \hline
-       \textless endroute\textgreater{} & EndRoute of string & N/A & endroute is a primitive. Represents the possible ending points of a route. Eval turns these into coordinates.\\
+       \textless endroute\textgreater{} & EndRoute of string & endroute is a primitive. Represents the possible ending points of a route. Eval turns these into coordinates.\\
        \hline
      \end{tabular}
    \end{table}

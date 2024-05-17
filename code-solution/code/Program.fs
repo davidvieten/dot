@@ -20,6 +20,7 @@ let main args =
     | Some ast ->
         let svg = eval ast
         if args.Length > 1 then
+            //2nd argument is the name of the new file
             let newFile = args[1]
             //changes newFile to svg format
             let outputFile = IO.Path.ChangeExtension(newFile, ".svg") 

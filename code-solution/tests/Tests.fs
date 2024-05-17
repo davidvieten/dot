@@ -21,7 +21,8 @@ type TestClass () =
                Assert.AreEqual(expected, ws)
            | None ->
                Assert.IsTrue false
-(*Does the parsar returns the correct AST when given more than 1 route*)
+               
+(*Does the parsar return the correct AST when given more than 1 route*)
     [<TestMethod>]
        member this.twoRoutes() =
            let input = "lefthash net right offense righthash corner left defense"
@@ -37,7 +38,7 @@ type TestClass () =
                Assert.IsTrue false
 
 
-(*Does the dotplace accurately dictate the coodirnate of the dot*)
+(*Does the eval dotplace accurately dictate the coodirnate of the dot*)
     [<TestMethod>]
         member this.TestEvalDot() =
             let expectedDotRightOffense = {x=296; y=250}
