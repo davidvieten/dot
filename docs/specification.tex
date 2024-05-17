@@ -65,19 +65,20 @@
 \subsection*{Introduction}
 {Fortunately, I have had the privilege of being around the sport of
 hockey for the majority of my lifetime. Over the years, it has become clear to me that 
-the current method of drawing face-off plays is outdated and inefficient. A face-off takes place at the start of a period or
-following a whistle. The ref drops the puck on a face-off dot and two center-men battle for possesion. Face-offs
-play an important role in hockey, as they are an opportunity to gain possession and run a set play. As a result
-coaches draw up routes for each of the 5 guys on the ice, dictating the route of each player on a face-off win. 
-Often, teams have multiple versions of these set routes called "face-off plays." These
+the current method of drawing face-off plays is outdated and inefficient. A face-off takes place on a face-off dot
+ at the start of a period or following a whistle. The ref drops the puck on the face-off dot and two center-men battle 
+ for possesion. Face-offs play an important role in hockey, as they serve as opportunity to gain possession and run a set 
+ play. As a result, coaches draw up routes for each of the 5 guys on the ice, dictating the duty of each player off of a 
+ face-off.  Often, teams have multiple versions of these set routes called "face-off plays." These
 face-off plays may change on any given week depending on who the opponent is and what their weaknesses
 are. As a result, the players are responsible for memorizing their routes. Currently, coaches either draw
 up the faceoff plays on a white board and hope the players can remember it, or they draw them up on paper
 and distribute photocopies for the players to study.\\
 
 
-The programming language Dot solves this problem. Dot allows coaches to create face-off plays in an SVG
-that can be emailed to players. This language saves coaches a headache by providing a way to easily distribute
+The programming language Dot solves this problem. Dot allows coaches to create face-off plays in an SVG, which can then
+be sent out to the players. These face-off plays can be drawn on any offensive zone or defensive zone face-off dot. 
+This language saves coaches a headache by providing a way to easily distribute
 face-off plays without wasting paper and ink to do so. Coaches will also be able to save face-off plays,
 allowing them to keep track of what plays they have used against who in the past. This ability to save face-off
 plays will allow coaches to save scouting reports, increasing prepardness for the team. In a typical game week, coaches 
@@ -89,14 +90,14 @@ time and allow players to study their routes in an efficient manner.
 \subsection*{Design Principles}
 {Several design principles guide Dot's development to address the problem of creating and
 distributing faceoff plays. With the goal of accessibility and usability, Dot produces an
-SVG allowing coaches to easily distribute visual representations of plays. Efficiency and scalability are two factors
-that Dot seeks to achieve.
-The ability to save and organize face-off plays supports scalability by allowing coaches to create libraries
-of strategies/pre-scouts over time. Adaptability and extensibility are also fundamental design principles in the
+SVG allowing coaches to easily distribute visual representations of plays. Efficiency is another principle that Dot seeks to achieve.
+The ability to save and organize face-off plays supports this by allowing coaches to easily create libraries
+of strategies/pre-scouts over time. Extensibility is also a fundamental design principle in the
 development of the language. Dot allows for the creation of custom plays designed for specific opponents, providing
-an advantage in the hockey world. Furthermore, Dot's support for saving and analyzing opponent's face-off plays
+an advantage in the hockey world. With the current infrastructure, Dot provides a way to create an extensive number of plays.
+ Furthermore, Dot's support for saving and analyzing opponent's face-off plays
 contributes to its strategic use as a tool for planning and adapting. Moreover, Dot is built with accessibility,
-efficiency, and adaptability in mind.
+efficiency, and extensability in mind.
 }
 
 \pagebreak
@@ -184,7 +185,16 @@ well as knowledge of the sport of hockey. The primitives help define areas on th
  that players will move to from their original position once the puck drops. Combining forms involve creating these routes 
  by pairing start and end points. These routes can be organized into a board, which is a list of routes. A sequence of 
  strategic moves can then be represented off a faceoff. By understanding these core concepts, users can effectively design 
- player movements that will produce an advantage on game day.
+ player movements that will produce an advantage on game day.\\
+
+ Aside from that, the techincal aspect of using the project is simple. Users will create a .dot file
+ containing 1 or more routes. For more information please refer to the formal syntax, but a typical route will include a 
+ starting postion, an ending position, and should specify the side and zone on the ice. Once this file is saved, the user can create their svg file on the command line. Users will type
+ \textbf{dotnet run $<$someDotFile$>$ w}hich will return a string representing an svg. Using this string, users will be able to create their svg.
+ To further simply this, I have created an option to create the SVG itself from the command line rather than return an svg string.
+ Users should follow the same directions as before, typing \textbf{dotnet run $<$someDotFile$>$}, but now followed by the desired name of the svg 
+ file that will be produced. Running \textbf{dotnet run $<$someDotFile$>$ $<$newSvgFile$>$} take someDotFile.dot as input and produce and save an 
+ SVG named newSvgFile.svg. The users computer will then open newSvgFile in their default SVG viewer.
 
 
  \pagebreak
@@ -247,7 +257,13 @@ incorporate the ability to show players either skating with or passing the puck.
 drawing dotted and squiggly lines as opposed to stright lines. By doing this, players would know
 their routes of the face-off, as well as the where the puck will be. Given our set time period,
 I am unable to implement this feature. With some more experience in SVG, I think I could add 
-this feature, and it would greatly enhance the abilities of Dot.}
+this feature, and it would greatly enhance the abilities of Dot. \\
+
+Along with this feature, creating the ability to draw routes on neutral zone dots would enhance the user
+exerience. There are a few ways this could be implemented, but I think the most straight forward would be to add
+a match case in the evaluation step that would dictate which .png is imported. This would change the grammar of the language,
+asking users to specify if a face-off should take place in the nuetral zone or not. Similar to the first feature, I believe this
+could be implemented with some more time allowed.}
 
 % DO NOT DELETE ANYTHING BELOW THIS LINE
 \end{document}
