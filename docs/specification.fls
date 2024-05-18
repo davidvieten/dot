@@ -1166,6 +1166,10 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
+INPUT ./images/Mav1.png
+INPUT images/Mav1.png
+INPUT ./images/Mav1.png
+INPUT ./images/Mav1.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
